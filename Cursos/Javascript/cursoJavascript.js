@@ -182,6 +182,7 @@
 	Los paréntesis son opcionales.
 	Link: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/typeof
 */
+
 /*                                                                                   Parseint                                                                                         */	
 /*
 	Convierte (parsea) un argumento de tipo cadena y devuelve un entero de la base especificada. 
@@ -215,6 +216,25 @@
 		console.log(resultadoDecimal)					console.log(resultadoResta_decimal)	                    console.log(resultadoMulti_decimal)
 
 
-	/*--------------- División ------------*/	   /*------------------ Sobrante ----------------*/	            /*------------------ Jugando ------------------*/
+	/*--------------- División ------------*/	   /*------------------ Sobrante ----------------*/	       /*------------------ Jugando ------------------*/
 		let resultadoDivisión = 20 / 10                let resultadoSobrante = 20 % 12							let resultado = (2 * (100 / 5) + 10)
 		console.log(resultadoDivisión)                 console.log(resultadoSobrante)							console.log(resultado)
+
+								
+/*
+.																		   Operadores Relacionales
+
+	Los operadores relacionales definidos por JavaScript son idénticos a los que definen las matemáticas: mayor que (>), menor que (<), mayor o igual (>=),
+	menor o igual (<=), igual que (===) y distinto de (!==).
+	Esto nos va a mostrar si es Verdadero/True o si es Falso/False.
+	Ejemplos:
+*/
+	/*------------- Mayor qué ------------*/	   /*--------------- Menor qué -----------------*/			/*---------------- Igual qué ---------------*/													
+		let resultado = 10 > 20                        let resultadoMenor = 20 < 10                              let resultadoIgual = 10 === 20
+		console.log(resultado) 	                       console.log(resultadoMenor)								 console.log(resultadoIgual)
+
+	/*--------------- Diferente -----------------*/
+		let resultadoDiferente = 10 !== 20		
+		console.log(resultadoDiferente)				
+
+																																		 
