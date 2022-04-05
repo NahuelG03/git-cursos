@@ -8,7 +8,7 @@
     ingles, por lo que si pones caracteres que en un teclado de ingles no figuran como la Ñ, te va a saltar un error.
 
     TIP-Emojis: para hacer emojis presionamos la tecla de (Windows + .), o tambien copiar un emoji de una página.
- */
+*/
 
 
 /*----------------------------------------------       ¿Como vincular un documento de Javascript con el html?      ----------------------------------------------------*/
@@ -29,7 +29,7 @@
     un identificador de objetos en códigos del mismo, como pueden ser las variables.
 
  	link: ( https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Lexical_grammar#palabras_clave)
- */
+*/
  // Ejemplo:
   alert("esto es una alerta del navegador string es un texto")
 
@@ -39,7 +39,7 @@
 	Cuando el navegador encuentra un bloque de JavaScript, generalmente lo ejecuta en orden, de arriba a abajo. 
 	Esto significa que debes tener cuidado con el orden en el que colocas las cosas.
 	Ejemplo: 
- */	 
+*/	 
 	alert("primero");
 	alert("segundo");
 	alert("tercero");
@@ -103,7 +103,7 @@
 					
 					
 					
- /*                                                 ==============================  Variables  =================================                                                     */
+/*                                                  ==============================  Variables  =================================                                                     */
 
 /*
     	¿Qué son las variables?: Es un espacio de memoria que yo género/reservo para guardar un dato.
@@ -149,7 +149,7 @@
  	Nos sirve para unir una o más variables, también lo puedes mezclar con diferentes tipos de datos.
  	Concatenar es una elegante palabra de la programación que significa: "unir". Para unir cadenas en JavaScript el símbolo de más +, el mismo operador que usamos para sumar números,
   	pero en este contexto hace algo diferente. Vamos a probar un ejemplo en nuestra consola.
-  */ 
+*/ 
   	let nombreMascota = "Shara"
   	let edadMascota = 4
   	console.log("el nombre de tu mascota es: " + nombreMascota + " " + edadMascota) // El + " " + es un espacio en blanco
@@ -365,6 +365,169 @@ if (parseInt(numUsuario) <= 10) {
 
 	While/Mientas Crea un bucle que ejecuta una sentencia especificada mientras cierta condición se evalúe como verdadera. Dicha condición es evaluada antes de ejecutar la sentencia.
 
+	Increment (++): El operador de incremento (++) incrementa (suma uno a) su operando y devuelve un valor.
+	Si se usa postfijo, con operador después del operando (por ejemplo, x++), el operador de incremento incrementa y devuelve el valor antes de incrementar.
+	Si se usa como prefijo, con el operador antes del operando (por ejemplo, ++x), el operador de incremento incrementa y devuelve el valor después del incremento.
+	link: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Increment
 
-
+	Ejemplos:
 */
+	let numero = 1
+
+	while (numero <= 10) {
+		console.log(numero)
+		numero ++ // numero = numero + 1
+	}
+	console.log("fin numero " + numero)
+
+
+/*                                                                               Juego De Adivinar
+
+Math.random(): La función Math.random() retorna un punto flotante, un número pseudo-aleatorio dentro del rango [0, 1).
+Esto es, desde el 0 (Incluido) hasta el 1 pero sin incluirlo (excluido), el cual se puede escalar hasta el rango deseado.
+La implementación selecciona la semilla inicial hasta el algoritmo que genera el número aleatorio; este no puede ser elegido o cambiado por el usuario.
+
+link: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+Ejemplos:
+*/
+	// Retorna un número aleatorio entre 0 (incluido) y 1 (excluido)
+	function getRandom() {
+  	 return Math.random();
+	}
+	// Retorna un número aleatorio entre min (incluido) y max (excluido)
+	function getRandomArbitrary(min, max) {
+  	 return Math.random() * (max - min) + min;
+	}
+
+	// Retorna un entero aleatorio entre min (incluido) y max (excluido)
+	// ¡Usando Math.round() te dará una distribución no-uniforme!
+	function getRandomInt(min, max) {
+	  return Math.floor(Math.random() * (max - min)) + min
+	}
+
+	//                                                                                  Juego
+
+	let numeroMaquina = Math.floor(Math.random() * (10 - 1)) + 1
+
+	let vidas = 3
+	 let numeroUsuario = parseInt(prompt("Adivine el número del 1 al 10"))
+
+	while(numeroMaquina !== numeroUsuario && vidas > 1) {
+
+		let mensaje = (numeroMaquina > numeroUsuario) ? 'El número Maquina es mayor' : 'El número Maquina es menor'  //true : false // operador ternario
+
+		console.log('Te equivocaste!' + mensaje)
+		numeroUsuario = parseInt(prompt("número del 1 al 10"))
+		vidas --
+	}
+
+	if (numeroMaquina === numeroUsuario) {
+		console.log('Ganaste')
+	} 
+	else {
+		console.log('Perdiste')
+	}
+
+
+/*                                                     ==============================  Array  ==============================
+
+	Los Arrays/Arreglos son objetos similares a una lista cuyo prototipo proporciona métodos para efectuar operaciones de recorrido y de mutación.
+	Tanto la longitud como el tipo de los elementos de un array son variables.
+	Los arrays se identifican con los corchetes [] ( Ctrl + Mayús + tecla q contiene { ).
+	
+	Conceptos claves:
+	length: Tamaño de array (cantidad de elementos)
+	índice: Comienzan en cero, es decir, el índice del primer elemento de un array es 0.
+	undefined: Una variable a la que no se le ha asignado valor, o no se ha declarado en absoluto (no se declara, no existe) son de tipo undefined. 
+	Un método o sentencia también devuelve undefined si la variable que se está evaluando no tiene asignado un valor. Una función devuelve undefined si no se ha devuelto un valor.
+
+	Ejemplos:
+*/
+	// Lista De Frutas
+	let frutas = ['banana', 'manzana', 'naranja']
+	console.log(frutas)
+	console.log(frutas.length)
+	// Pintando un producto en la consola
+	console.log(frutas[1]) // esta es la Manzana
+
+
+/*                                                        ==============================  For  ==============================
+
+	La instrucción For/Para ejecuta una secuencia de instrucciones un número determinado de veces.
+	For crea un bucle/loop que consiste en tres expresiones opcionales, encerradas en paréntesis y separadas por puntos y comas, seguidas de una sentencia ejecutada en un bucle.
+	links: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/for
+	Ejemplos:
+*/
+	let frutas2 = ["pera", "kiwi", "mandarina"]
+
+	for (let i = 0; i < frutas2.length; i ++) {
+		console.log(frutas2[i])
+	}
+
+/*                                                                                       For Of
+
+	La sentencia sentencia for...of ejecuta un bloque de código para cada elemento de un objeto iterable, como lo son: String, Array, 
+	objetos similares a array (por ejemplo, arguments or NodeList), TypedArray, Map, Set e iterables definidos por el usuario.
+	La sintaxis de for...of es específica para las colecciones, y no para todos los objetos. 
+	Esta Iterará sobre cualquiera de los elementos de una colección que tengan la propiedad [Symbol.iterator].
+	Ejemplos:
+*/
+	let frutasOf = ('uva', 'piña', 'damasco')
+	for (let fruta of frutasOf) {
+		console.log(fruta)
+	}
+
+/*                                                                                        For In
+	El bucle for...in iterará sobre todas las propiedades de un objeto. Más tecnicamente, iterará sobre cualquier propiedad en el objeto que haya sido internamente definida con
+	su propiedad [[Enumerable]] configurada como true.
+	Ejemplo:
+*/
+	for (let fruta in frutas) {
+    console.log(fruta);
+	}
+
+
+/*                                                       ==============================  Function  ==============================                      
+
+   Las funciones son uno de los bloques de construcción fundamentales en JavaScript. 
+   Una función en JavaScript es similar a un procedimiento — un conjunto de instrucciones que realiza una tarea o calcula un valor, pero para que un procedimiento califique como
+   función, debe tomar alguna entrada y devolver una salida donde hay alguna relación obvia entre la entrada y la salida.
+   Características:
+	El nombre de la función.
+	Una lista de parámetros de la función, entre paréntesis y separados por comas.
+	Las declaraciones de JavaScript que definen la función, encerradas entre llaves, { ... }.
+	links: https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Functions
+
+	HOISTING: una estricta definición de hoisting sugiere que las declaraciones de variables y funciones son físicamente movidas al comienzo del código, 
+	pero esto no es lo que ocurre en realidad. Lo que sucede es que las declaraciones de variables y funciones son asignadas en memoria durante la fase de compilación, 
+	pero quedan exactamente en dónde las has escrito en el código.
+
+	Conclusión: Es como que javascript hace un barrido sin ejecutar nada, pero en la memoria Ram que tiene cuando escribimos este lee todo nuestro código haciendo tipo un barrido
+	pero lee solo la función no lo que esta dentro y luego empieza a meter todo en la memoria y despues ya sabe que la función empieza arriba, por eso si la llamamos el ya la va
+	a leer y recien ahí va a entrar en su interior.
+
+	Ojito!!
+	"Hoisting" usualmente es una pregunta técnica en una entrevista de trabajo 😲
+
+	Ejemplos:
+*/
+
+	function saludar () {
+		console.log('Bienvenido! ')
+	}
+	saludar()
+
+	// Concatenación
+	function saludar(nombreUsuario) {
+		return "Bienvenido! " + nombreUsuario
+	}
+	console.log(saludar("Nahuel"))
+
+	// Ejercicio Suma
+	function sumar (n1, n2) {
+		return parseInt(n1) + parseInt(n2)
+	}
+	let numUno = prompt("Ingrese primer numero")
+	let numDos = prompt("Ingrese segundo numero")
+
+	consolo.log(sumar(numUno, numDos))
