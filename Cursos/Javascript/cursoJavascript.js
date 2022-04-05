@@ -99,7 +99,7 @@
 					                           
 /*                                    ========================================================================================================
 .					                           =                            Fundamentos De Programación                          =
-.					                  ========================================================================================================                                                   */
+.					                  ========================================================================================================                                       */
 					
 					
 					
@@ -237,4 +237,134 @@
 		let resultadoDiferente = 10 !== 20		
 		console.log(resultadoDiferente)				
 
-																																		 
+											
+/*                                                                          Operadores lógicos	
+
+	Los operadores lógicos se usan para combinar dos valores Booleanos y devolver un resultado verdadero, falso o nulo. Los operadores lógicos también se denominan operadores Booleanos.
+
+	&& (y): Si los dos son verdaderos devuelve verdadero.
+	|| (o): Basta con que uno sea verdadero para que devuelva verdadero.
+	! (no): Negación
+
+	Ejemplos:
+*/			
+	/*-------------------- && --------------------*/	                /*-------------------- || --------------------*/            /*-------------------- ! --------------------*/
+		let resultado_V = true && true                                      let resultado_O = true || false || true 					let resultado_ = !false
+		console.log(resultado_V)	                                        console.log(resultado_O)                                    console.log(resultado_)
+	// esto nos da True                                                	// este nos da True                                         // este nos da True
+		let resultado_F = true && false && true	                        // funciona a lo opuesto de && si hay un True               // va a hacer lo contrario a lo que le diga    
+	// si hay un false dentro de la pregunta                            // en la pregunta va a devolver siempre True
+	// va a devolver siempre False
+	// Pero no es así con el O ||																																		 
+
+
+/*                                            ==============================  Estructuras De Control  ==============================                                                  
+
+	En lenguajes de programación, las estructuras de control permiten modificar el flujo de ejecución de las instrucciones de un programa.
+
+	Condicionales:
+
+	if/else (Si ocurre algo, haz esto, sino, haz lo esto otro...) if/else (si/no)
+	?: operador ternario (Operador ternario: Equivalente a If/else , método abreviado.)
+	switch (Estructura para casos específicos: Similar a varios If/else anidados.)
+	Repetitivas o iterativas
+
+	while
+	do... while
+	for
+	
+	Ejemplos:
+*/
+	if( condicion ) {
+    // bloque verdadero
+	}else {
+  	// bloque falso
+}
+
+//	                                                                               Practicando			
+
+// Ejemplo 1:
+
+// Le decimos al usuario que escriba Javascript
+	let stringUsuario = prompt('Escriba "JavaScript"')													
+
+// Preguntamos si lo que escribio el usuario es correcto (Javascript)
+	if(stringUsuario === 'JavaScript'){
+		// en esta parte escribo lo positivo
+	console.log('correcto')
+	}
+	else {
+		// en esta parte escribo lo negativo
+	console.log('incorrecto')
+	}
+
+// Ejemplo 2:
+
+let numUsuario1 = prompt('Ingrese un número del 1 al 10')
+
+if(numUsuario1 <= 10){
+	console.log('perfecto!')
+}
+else {
+	console.log('mal ahi´era del 1 al 10')
+}
+
+// Ejemplo 3:
+
+let numUsuario = prompt("Ingrese numero del 1 al 10");
+
+console.log(numUsuario + " Es: " + typeof numUsuario);
+
+console.log(parseInt(numUsuario));
+
+if (parseInt(numUsuario) <= 10) {
+    // Sentencia true
+    console.log("Genial!!");
+} else {
+    // Sentencia false
+    console.log("Super mal!!");
+}
+
+/*                                                   ==============================  Swith  ==============================
+
+	La declaración switch/Según evalúa una expresión, comparando el valor de esa expresión con una instancia case, y ejecuta declaraciones asociadas a ese case,
+    así como las declaraciones en los case que siguen.
+    Esta instrucción permite ejecutar opcionalmente varias acciones posibles, dependiendo del valor almacenado en una variable. Al ejecutarse, 
+    se evalúa el contenido de la variable y se ejecuta la secuencia de instrucciones asociada con dicho valor.
+
+	switch(opens new window)
+	Plantillas literales (opens new window): Las plantillas literales son cadenas literales que habilitan el uso de expresiones incrustadas. Con ellas,
+	es posible utilizar cadenas de caracteres de más de una línea, y funcionalidades de interpolación de cadenas de caracteres.
+	Interpolación ( `` | Alt Gr + Ctrl ) 
+	Ejemplos:
+*/
+	let opcionUsuario = prompt(`
+	Elija una opción:
+	1: Libros
+	2: Películas
+	3: Juegos
+	`)
+	console.log(opcionUsuario)
+	// Swith
+	switch(opcionUsuario){
+		case '1':
+			console.log('Martín Fierro')	  
+		break
+		case '2':
+			console.log('John Wick')
+		break
+		case '3':
+			console.log('Juega Counter Strike')
+		break
+		default:
+			console.log('Opción no valida')
+		break
+	}
+
+/*                                                    ==============================  While  ==============================
+
+	While/Mientas Crea un bucle que ejecuta una sentencia especificada mientras cierta condición se evalúe como verdadera. Dicha condición es evaluada antes de ejecutar la sentencia.
+
+
+
+*/
