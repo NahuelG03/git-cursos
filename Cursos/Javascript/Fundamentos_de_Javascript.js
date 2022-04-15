@@ -335,7 +335,7 @@ if (parseInt(numUsuario) <= 10) {
 	switch(opens new window)
 	Plantillas literales (opens new window): Las plantillas literales son cadenas literales que habilitan el uso de expresiones incrustadas. Con ellas,
 	es posible utilizar cadenas de caracteres de más de una línea, y funcionalidades de interpolación de cadenas de caracteres.
-	Interpolación ( `` | Alt Gr + Ctrl ) 
+	Interpolación ( `` | Alt Gr + Ctrl )
 	Ejemplos:
 */
 	let opcionUsuario = prompt(`
@@ -523,7 +523,7 @@ Ejemplos:
 	}
 	console.log(saludar("Nahuel"))
 
-	// Ejercicio Suma
+	// Ejercicio Suma     
 	function sumar (n1, n2) {
 		return parseInt(n1) + parseInt(n2)
 	}
@@ -531,3 +531,137 @@ Ejemplos:
 	let numDos = prompt("Ingrese segundo numero")
 
 	consolo.log(sumar(numUno, numDos))
+
+
+
+
+	========================================================================================================================================================================
+    =                                                                          Conceptos Claves                                                                            =
+    ========================================================================================================================================================================
+
+
+
+ /*=====                                                                   interpolación template string                                                                        ======
+
+	Las plantillas literales son cadenas literales que habilitan el uso de expresiones incrustadas. Con ellas, es posible utilizar cadenas de caracteres de más de una línea, 
+	y funcionalidades de interpolación de cadenas de caracteres.
+
+	template string Link: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Template_literals
+	Las plantillas de cadena de caracteres pueden contener marcadores, identificados por el signo de dólar y envueltos en llaves ${expresión}. 
+	Las expresiones contenidas en los marcadores, junto con el texto
+
+	Interpolación de expresiones:
+	-barra invertida "alt Gr + ?"  
+	-acento grave "alt + 96"
+
+	Ejemplo:
+*/
+	// --------------- Interpolación de expresiones ----------------
+ 		let nombreUsuario = "Nahuel"
+ 		console.log('\nBienvenido: \n' + nombreUsuario + '\n') 
+
+
+/* 		con las plantillas literales, se pueden utilizar sus nuevas capacidades 
+ 		(es decir, insertar expresiones con ${ } e incluir caracteres de fin de linea literales dentro de la cadena) para simplificar la sintaxis:
+*/
+ 		let nombreMascota = 'Shara'
+ 		console.log(`El nombre de su mascota es: 
+ 			${nombreMascota} // con esto llamamos a la variable 
+ 		 `)
+
+ 	// ------------------------ Métodos --------------------------
+ 		let nombreUsuario = 'Nahuel'
+ 		console.log('Bienvenido: ${nombreUsuario.toUpperCase()}')
+
+
+ 	// -------------------- Operador Ternario --------------------
+ 		let nombreUsuario = 'Nahuel'
+ 		let estado = false  
+
+ 		console.log(`
+ 		${estado ? 'Bienvendo!' : 'Adiós!'}	${nombreUsuario}
+ 		 `) 
+
+
+/*                                        =================================  VAR vs LET vs CONST  =====================================
+
+
+/*                                               ---------------------------------  VAR  ----------------------------------                                                           
+	
+	Uno de los mayores problemas al declarar variables con VAR, es que puede sobrescribir las declaraciones de variables sin errores.
+	
+	Ejemplo:
+*/
+		var nombreGato = Mishi   
+		var nombreGato = fuzz 
+		console.log(estado)   // esto siempre va a dar el segundo valor que le asignemos en este caso Fuzz
+/*
+	En una aplicación pequeña, es posible que no se encuentre con este tipo de problema, pero cuando su código se agrande, 
+	puede sobrescribir accidentalmente una variable que no tenía la intención de sobrescribir.
+
+	Debido a que este comportamiento no arroja un error, la búsqueda y corrección de errores se vuelve más difícil. 
+	Se introdujo let una nueva palabra clave llamada en ES6 para resolver este problema potencial con var.
+*/
+
+
+/* 													---------------------------------  Scope  ----------------------------------
+
+	Siguiendo con el tema de las variables en Javascript, conozcamos el scope.
+
+	TIP: En simples palabras el "scope de una variable" hace referencia al lugar donde esta va a vivir o podrá ser accesible.
+
+	Cuando declaras una variable con VAR, se declara globalmente o localmente si se declara dentro de una función.
+*/		
+		var estado = true
+		if (estado) {
+    		var estado = false
+		}
+		console.log(estado)
+
+
+
+/*                                                ---------------------------------  LET  ----------------------------------
+
+	let: Una variable con el mismo nombre solo se puede declarar una vez.
+*/
+		let userName = 'Jorge'
+		let userName = 'Messi'
+		console.log(userName)
+
+//  Pero si se puede cambiar su valor:
+	
+		let userName = 'Jorge'
+		userName = 'Messi'
+		console.log(userName)
+
+/*
+	let se comporta de manera similar, pero con algunas características adicionales. Cuando declaras una variable con let dentro de un bloque, declaración o expresión, 
+	su alcance se limita a ese bloque, declaración o expresión.
+*/
+
+		let estado = true
+		if (estado) {
+		    let estado = false
+		    console.log(estado)
+		}
+		console.log(estado)	
+	
+
+
+		for (let i = 0; i < 10; i++) {
+	    	console.log(i)
+		}
+		console.log(i)
+
+
+/* 													---------------------------------  CONST ----------------------------------
+
+	const tiene todas las características increíbles de let, con la ventaja adicional de que las variables declaradas usando const son de solo lectura. 
+	Son un valor constante, lo que significa que una vez que se asigna una variable const, no se puede reasignar.
+
+
+
+
+
+*/											
+
