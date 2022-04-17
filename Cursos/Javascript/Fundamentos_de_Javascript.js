@@ -659,9 +659,114 @@ Ejemplos:
 	const tiene todas las características increíbles de let, con la ventaja adicional de que las variables declaradas usando const son de solo lectura. 
 	Son un valor constante, lo que significa que una vez que se asigna una variable const, no se puede reasignar.
 
-
-
-
-
+	Algunos desarrolladores prefieren asignar todas sus variables usando const de forma predeterminada, a menos que sepan que necesitarán reasignar el valor. 
+	Solo en ese caso, usan let.
 */											
 
+//   ------------- Error 1 ---------------
+		const estado = true										
+		estado = false
+
+//   ------------- Error 2 ---------------						// estos errores solo funcionan con LET								
+		for (const i = 0; i < 10; i++) {
+			console.log(i)
+		}
+
+//   ------------- Válido -----------------
+		const estado = true
+		if (estado) {
+			const estado = false
+			console.log(estado)
+		} 
+		console.log(estado)
+
+
+/* 											 ====================================  Array Vs Const  =====================================							
+
+	Es importante comprender que los objetos (incluidos los arreglos y las funciones) asignados a una variable mediante el uso const siguen siendo mutables. 
+	El uso de const solo evita la reasignación del identificador de variable.
+*/
+
+//  -------------- Error --------------
+		const miArray = []
+		miArray = ["nuevoElemento"]
+
+//  ------------- Válido ---------------	
+		const miArray = []
+		miArray[0] = ["nuevoElemento"]
+		console.log(miArray)
+
+
+/* 										---------------------------------  Array (push, pop, shift, unshift) ----------------------------------
+	
+
+.											      --------------------------------- Push/Empujar ----------------------------------
+														
+	El método push() añade uno o más elementos al final de un array y devuelve la nueva longitud del array.
+*/
+		const frutas = ['sandía', 'pera']
+
+		frutas.push('banana')  // esto va a agregar la "banana" al final de la lista
+
+		console.log(frutas)
+
+/*
+
+.                                                   --------------------------------- Unshift ----------------------------------            
+
+	El método unshift() agrega uno o más elementos al inicio del array, y devuelve la nueva longitud del array.
+*/
+	const frutas = ['sandía', 'banana']
+
+	frutas.unshift('pera') // esto va a agregar la "pera" al pricipio de la lista
+
+	console.log(frutas)
+
+
+/*                                                    --------------------------------- Pop ----------------------------------
+
+	El método pop() elimina el último elemento de un array y lo devuelve. Este método cambia la longitud del array.
+*/
+
+	const frutas = ['sandía', 'pera']
+
+	frutas.pop()   // con esto le digo que elimine el ultimo elemento de la lista
+
+	console.log(frutas)
+
+// para devolver el ultimo elemento tendremos que crear una constante, sería como una variable Auxiliar
+	
+	const frutas = ['sandía', 'pera']
+
+	const frutaEliminada = frutas.pop()
+
+	console.log(frutas)
+	console.log(frutaEliminada)
+
+
+/* 												     --------------------------------- Shift ----------------------------------				
+
+	El método shift() elimina el primer elemento del array y lo retorna. Este método modifica la longitud del array.
+*/
+	const frutas = ['sandía', 'pera']
+
+	const frutaEliminada = frutas.shift()      // este solo va a eliminar el primer elemento de la lista
+
+	console.log(frutas)
+	console.log(frutaEliminada)
+
+
+/* 												======================================  Confirm =====================================		
+
+	El método Window.confirm() muestra una ventana de diálogo con un mensaje opcional y dos botones, Aceptar y Cancelar.
+
+	Message: es la cadena que se muestra opcionalmente en el diálogo.
+	Result: es un valor booleano indicando si se ha pulsado Aceptar o Cancelar (Aceptar devuelve true).
+*/
+//         Sintaxis
+	result = window.confirm(message);
+
+//                    Ejemplo
+	if (window.confirm("Do you really want to leave?")) {
+	  window.open("exit.html", "Thanks for Visiting!");
+	}
