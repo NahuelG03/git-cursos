@@ -770,3 +770,261 @@ Ejemplos:
 	if (window.confirm("Do you really want to leave?")) {
 	  window.open("exit.html", "Thanks for Visiting!");
 	}
+
+
+
+/*	                                                                           Práctica: carrito de compras
+	El objetivo es crear una aplicación que nos permita ir agregando elementos a un carrito de compras: ver ejemplo(opens new window)
+	confirm(): muestra una ventana de diálogo con un mensaje opcional y dos botones, Aceptar (true) y Cancelar (false).
+*/
+	const frutas = []
+	const fruta = prompt('🍒 Feria Market 🍉 ¿qué fruta desea comprar?')
+
+	frutas.push(fruta)
+
+	while (confirm('¿Desea agregar otro elemento al 🛒?')) {
+	    const fruta = prompt('¿qué fruta desea comprar?')
+	    frutas.push(fruta)
+	}
+
+	console.log('Ustede compró: ')
+	for (let fruta of frutas) {
+	    console.log(fruta)
+	}
+
+
+/* 										 	======================================  Funciones Anónimas =====================================					
+						
+	En JavaScript, usualmente no necesitas nombrar tus funciones, especialmente cuando se pasa una función como argumento a otra función. En su lugar, 
+	creamos funciones inline (en línea). No necesitamos nombrar estas funciones porque no las reutilizamos en otro lugar.
+
+	TIP:
+	La forma correcta de definir una función varía según el comportamiento que esperemos de la misma: con las funciones declaradas, tenemos la seguridad de que siempre estarán 
+	disponibles en tiempo de ejecución. Con las funciones Expresadas, tendremos que éstas no son evaluadas hasta que el intérprete no alcance su posición en el código, 
+	lo cual puede generar errores en arquitecturas muy anidadas.
+
+	El hecho de que las funciones Declarativas se evalúen antes que las expresiones, pueden producir comportamientos no deseados cuando forman parte de condicionales.
+	Para estos casos, el uso de las funciones expresadas garantiza que éstas formarán parte del flujo general del programa, lo cual puede evitarnos sorpresa en determinados 
+	entornos.
+	Link: https://www.etnassoft.com/2011/09/02/funciones-declaradas-vs-funciones-expresadas-en-javascript/
+
+	ES6 nos proporciona el azúcar sintáctico, para no tener que escribir funciones anónimas de este modo. En su lugar, puedes usar la sintaxis de función flecha (Arrow).
+
+	Arrow functions: Una expresión de función flecha es una alternativa compacta a una expresión de función tradicional
+
+	Limitantes:
+	No tiene sus propios enlaces a this o super y no se debe usar como métodos.
+	No tiene argumentos o palabras clave new.target.
+	No apta para los métodos call, apply y bind, que generalmente se basan en establecer un ámbito o alcance
+	No se puede utilizar como constructor.
+
+	Link: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+*/
+
+//  ------------------ Función Declarativa ----------------------
+	// declaro la función
+	function numAleatorioRango(min, max) {
+    	return Math.floor(Math.random() * (max - min)) + min;
+	}
+
+	// invoco la función
+	console.log(numAleatorioRango(1, 11))
+
+// --------------------- Función Expresada -----------------------
+	const numAzar = function(min, max) {
+		return Math.floor(Math.random() * (max - min)) + min
+	}
+	console.log(numAzar(100, 201))
+
+// --------------------- Funciónes Flecha -----------------------
+	const azarFlecha = (min, max) => {
+		return Math.floor(Math.random() * (max - min)) + min
+	}
+	console.log(azarFlecha(1, 11))
+
+
+//                       Cualidades
+	const miNumeroFlecha = (max) => {
+    	return Math.floor(Math.random() * (max - 1)) + 1;
+	}
+
+	console.log(miNumeroFlecha(11))
+
+
+//	                     Reducción:
+	const miNumeroFlecha = max => Math.floor(Math.random() * (max - 1)) + 1;
+        
+	console.log(miNumeroFlecha(11))
+
+//	            Reducción con paréntesis:
+	const miNumeroFlecha = max => (Math.floor(Math.random() * (max - 1)) + 1);
+	        
+	console.log(miNumeroFlecha(11))
+
+//	                Más parámetros:
+	const miNumeroFlecha = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+
+	console.log(miNumeroFlecha(1, 11))
+
+//	Parámetros opcionales (también se puede hacer con function):
+	const miNumeroFlecha = (min = 1, max = 10) => Math.floor(Math.random() * (max - min)) + min;
+
+	console.log(miNumeroFlecha())
+
+
+
+/*                                     ======================================  Arrow & forEach() =====================================
+
+	forEach(): El método forEach() ejecuta la función indicada una vez por cada elemento del array.
+
+	Parámetros:
+	callback
+	Función a ejecutar por cada elemento, que recibe tres argumentos:
+	currentValue
+	El elemento actual siendo procesado en el array.
+	index Opcional
+	El índice del elemento actual siendo procesado en el array.
+	array Opcional
+	El vector en el que forEach() esta siendo aplicado.
+	thisArg Opcional
+	Valor que se usará como this cuando se ejecute el callback.
+
+	Valor de retorno: undefined.
+
+	Link: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+
+	Ejemplos:
+*/
+	let frutas = ['manzana', 'sandía', 'naranja']
+	frutas.forEach((fruta, index, array) => {
+		console.log(index)
+		console.log(fruta)
+		console.log(array)
+	})
+
+//	En nuestro ejemplo de carrito de compras:
+
+	const carrito = []
+	const fruta = prompt('🍒 Feria Market 🍉 ¿qué fruta desea comprar?')
+
+	carrito.push(fruta)
+
+	while (confirm('¿Desea agregar otro elemento al 🛒?')) {
+	    const fruta = prompt('¿qué fruta desea comprar?')
+	    carrito.push(fruta)
+	}
+
+	console.log('Ustede compró: ')
+	carrito.forEach((fruta, index) => (
+	    console.log(`${index + 1}: ${fruta}`)
+	))
+
+
+
+
+	========================================================================================================================================================================
+    =                                                                         Objetos                                                                            =
+    ========================================================================================================================================================================
+
+/*
+	JavaScript está diseñado en un paradigma simple basado en objetos.
+	Un objeto es una colección de propiedades, y una propiedad es una asociación entre un nombre (o clave) y un valor.
+	El valor de una propiedad puede ser una función, en cuyo caso la propiedad es conocida como un método.
+	Además de los objetos que están predefinidos en el navegador, puedes definir tus propios objetos.
+	Los objetos son similares a los arreglos (arrays), excepto que en lugar de usar índices para acceder y modificar sus datos, accedes a los datos en objetos a través de 
+	propiedades (properties).
+
+	Link: https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Working_with_Objects
+*/
+
+
+/*                                  ======================================  Objeto Literal =====================================
+
+	Se denomina objeto literal al objeto cuyas propiedades están declaradas textualmente en el código.
+	Link: https://dev.to/duxtech/es6-objetos-literales-en-javascript-58np
+*/
+		const mascota = {
+		  nombre: 'Shara', 
+		  edad: 4,
+		  duerme: true,
+		  enemigos: ['perros, gatos']
+		}
+
+
+//     Acceder a los valores
+//    Notación de punto:
+
+console.log(gato.nombre)
+console.log(gato.duerme)
+console.log(gato.enemigos[0]);
+
+//  Notación de corchetes (nos servirá para recorrerlo):
+
+console.log(gato['nombre'])
+console.log(gato['edad'])
+console.log(gato["enemigos"][0]);
+
+
+//  						    	======================================  CRUD (Propiedades) =====================================
+
+//   Crear (create)
+	gato.color = 'Azul'
+
+//	  Leer (read)
+	console.log(gato)
+
+//  Actualizar (update)
+	gato.edad = 11
+
+//  Eliminar (delete)
+	delete gato.duerme	
+
+
+
+/* 								  ======================================  hasOwnProperty =====================================			
+
+	A veces es útil comprobar si existe o no la propiedad de un objeto dado. Podemos utilizar el método .hasOwnProperty(propname) para determinar si un objeto tiene una 
+	propiedad con ese nombre. .hasOwnProperty() devuelve true o false si se encuentra la propiedad o no.
+*/
+
+	const mascota = {
+		nombre: 'Shara',
+		duerme: true,
+    	edad: 4,
+    	enemigos: ["perros", "gatos"]
+	}
+
+	console.log(gato.hasOwnProperty("nombre"))
+	console.log(gato.hasOwnProperty("salud"))
+
+
+/*                              ======================================  Objetos Anidados =====================================                                              */
+
+	const mascota = {
+		nombre: 'shara',
+		duerme: true,
+		edad: 4,
+		enemigos: ["perros", "gatos"]
+		otros: {                                // Apartir de aca empiezan los obejetos anidados
+			amigos: "mishi", "misha"
+			favoritos: {
+				comida: {
+					fria: "huesos",
+					caliente: "asado"
+				}
+			}
+		} 
+	}
+
+	console.log(mascota.otros.amigos[0])
+	console.log(mascota.otros.favoritos.comida.caliente)
+	
+
+
+/* 								======================================  Encadenamiento Opcional =====================================
+
+	Optional chaining: El operador de encadenamiento opcional ?. 
+	permite leer el valor de una propiedad ubicada dentro de una cadena de objetos conectados sin tener que validar expresamente que cada referencia en la cadena sea válida.
+
+	Link: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Optional_chaining
+*/
