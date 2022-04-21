@@ -306,7 +306,7 @@ if(numUsuario1 <= 10){
 	console.log('perfecto!')
 }
 else {
-	console.log('mal ahi´era del 1 al 10')
+	console.log('mal ahi era del 1 al 10')
 }
 
 // Ejemplo 3:
@@ -335,7 +335,7 @@ if (parseInt(numUsuario) <= 10) {
 	switch(opens new window)
 	Plantillas literales (opens new window): Las plantillas literales son cadenas literales que habilitan el uso de expresiones incrustadas. Con ellas,
 	es posible utilizar cadenas de caracteres de más de una línea, y funcionalidades de interpolación de cadenas de caracteres.
-	Interpolación ( `` | Alt Gr + Ctrl )
+	Interpolación ( `` | Alt Gr + Ctrl ) 
 	Ejemplos:
 */
 	let opcionUsuario = prompt(`
@@ -1027,4 +1027,188 @@ console.log(gato["enemigos"][0]);
 	permite leer el valor de una propiedad ubicada dentro de una cadena de objetos conectados sin tener que validar expresamente que cada referencia en la cadena sea válida.
 
 	Link: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Optional_chaining
+*/
+	const mascota = {
+		nombre: 'shara',
+		duerme: true,
+		edad: 4,
+		enemigos: ["perros", "gatos"]
+    } 
+    console.log(gato.otros.favoritos) // esto va a tirar un error en la consola: https://bluuweb.github.io/desarrollo-web-bluuweb/img/objetos-1.PNG
+
+//    Encadenamiento opcional: resultado undefined. 
+	console.log(gato.otros?.favoritos)
+
+
+/*                                   -----------------------------------------  Propiedad ------------------------------------
+
+	JavaScript está diseñado en un paradigma simple basado en objetos. Un objeto es una colección de propiedades, y una propiedad es una asociación entre un nombre (o clave)
+	y un valor. El valor de una propiedad puede ser una función, en cuyo caso la propiedad es conocida como un método.
+*/
+//  --------------  Propiedades --------------
+	const frutas =  ['sandía', 'melón', 'durazno']
+
+	console.log(frutas.length) // al poner el . ta va a aparecer diferentes opciones
+
+/*  length es la propiedad de una función objeto, e indica el número de argumentos que una función requiere, por ejemplo, el número de parámetros formales. 
+    Este número no incluye rest parameter (en-US). En cambio, arguments.length (en-US) es local a una función y aporta el número de argumentos actuales pasados a una función.
+
+	Propiedades de la Función constructora:
+	El Function constructor en sí mismo es Function un objeto. Sú propiedad length tiene el valor 1. Los atributos son: Grabable: false, Enumerable: false, Configurable: true.
+
+	Propiedad de la  Función prototype object:
+	La propiedad length del Function objeto prototype tiene el valor 0.
+
+	Link: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/length
+*/
+
+// ---------------- Métodos ---------------- 
+	gato.comer()
+	const nombreUser = "Nahuel"
+
+	console.log(nombreUser.toLowerCase()) // al poner el . nos va a aparecer difrentes metodos "Funciones"
+
+
+/*                                           ------------------------------------  Métodos ---------------------------------
+
+	Todos los objetos predefinidos por javascript que conozco tienen sus propios métodos.
+
+	Los métodos sirven para hacer acciones como una ventana emergente, modificar las propiedades de un objeto, añadir elementos a una lista, quitarlos, transformar un string 
+	en un número entero o decimal,…
+
+	(Los strings, los números, los arrays y las variables de tipo flecha) son en realidad objetos aunque nosotros los hayamos estado usando sin tenerlo en cuenta. 
+	Por lo tanto 'también tienen métodos'.
+*/
+	const mascota = {
+		nombre: 'Shara',
+		edad: 4,
+		duerme: true,
+		enemigos: ['perros', 'gatos'],
+		comer: function () {            // esta forma es antigua
+			console.log('Ahora esta comiendo')
+		}
+	}
+	mascota.comer()
+
+// ------------------ Reducido -----------------
+	const mascota = {
+		nombre: 'Shara',
+		edad: 4,
+		duerme: true,
+		enemigos: ['perros', 'gatos'],
+		comer() {                     // se le saca los : y la 'function'
+			console.log('Ahora esta comiendo')
+		}
+	}
+	mascota.comer().
+
+
+// --------------- Con Parámetros ----------------
+	const mascota = {
+		nombre: 'Shara',
+		edad: 4,
+		duerme: true, 
+		enemigos: ['perros', 'gatos'],
+		comer(comida) {
+			return 'Ahora esta comiendo: ' + comida
+		}
+	}
+	console.log(mascota.comer('huesos'))
+
+// ---------------- Busqueda Global -----------------
+	const nombre = 'Nahuel'
+
+	const mascota = {
+		nombre: 'Shara',
+		edad: 4,
+		duerme: true,
+		enemigos: ['perros', 'gatos'],
+		comer(comida) {
+			return `${nombre} esta comiendo ${comida}`
+		} 
+	}
+	console.log(mascota.comer('huesos'))
+
+// ------------------ Objeto This ----------------------
+	const mascota = {
+		nombre: 'Shara',
+		edad: 4,
+		duerme: true,
+		enemigos: ['perros', 'gatos'],
+		comer(comida) {
+			console.log(this)
+		}    
+	}
+	mascota.comer('huesos')
+
+
+/* 								    	        --------------------------------  This ----------------------------------		
+
+	this: Hace referencia al objeto contexto de JavaScript en el cual se está ejecutando el código actual
+	Link: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/this
+*/
+	const mascota = {
+		nombre: 'Shara',
+		edad: 4,
+		duerme: true,
+		enemigos: ['perros', 'gatos'],   
+		comer(comida) {
+			return `${this.nombre} Esta comiendo ${comida}`
+		}
+	}
+	console.log(mascota.comer('huesos'))
+
+
+/*                                              --------------------------------  Arrow Function ----------------------------------
+
+	Arrow Functions: No tiene this o super y no se debe usarla como métodos.
+*/
+	const gato = {
+    nombre: "Valiente",
+    duerme: true,
+    edad: 10,
+    enemigos: ["agua", "perros"],
+    comer: (comida) => {           // eso es Mala Practica
+        return `${this.nombre} está comiendo ${comida}`;
+    },
+};
+
+console.log(gato.comer("pez"));
+
+
+//          Pero si puedo utilizarla en su interior:
+
+	const mascota = {
+		nombre: 'Shara',
+		edad: 4,
+		duerme: true,
+		enemigos: ['perros', 'gatos'],
+		comer(comida) {
+			return `${this.nombre} esta comiendo ${comida}`
+		},                                                       // es importante separar con las comas
+		mostrarEnemigos() {
+			return this.enemigos.forEach((item) => console.log(item))
+		}
+	}
+	mascota.mostrarEnemigos()
+
+
+/*                         ======================================  Recorrer Un Objeto =====================================                                                  */
+
+
+/*                                   --------------------------------  For...in ----------------------------------           
+
+for in (opens new window): La instrucción for-in itera sobre todas las propiedades "enumerables" de un objeto que está codificado por cadenas
+
+Link: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/for...in
+
+¿Por qué usar for...in?
+-Dado que for...in está construido para "iterar propiedades de objeto", no se recomienda su uso con arreglos y opciones como Array.prototype.forEach() y existe for...of, 
+¿cuál podría ser el uso de for...in?
+
+-Es posible que "se utilice de forma más práctica con fines de depuración", ya que es una forma fácil de comprobar las propiedades de un objeto 
+(mediante la salida a la consola o de otro modo)
+
+-Aunque los arreglos suelen ser más prácticos para almacenar datos, en situaciones en las que se prefiere un par clave-valor para trabajar con datos 
+(con propiedades que actúan como la "clave"), puede haber casos en los que desees comprobar si alguna de esas claves cumple un valor particular.
 */
