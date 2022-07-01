@@ -1,4 +1,4 @@
-
+ 
     ========================================================================================================================================================================
 	=                                                                        Curso de Python                                                                               =
     ========================================================================================================================================================================   
@@ -184,9 +184,9 @@ print("El resultado es: ",resultado)
     Si tene un True y le asignas un Not te va a devolver False y viceversa
 
     -------------- Prioridad de los Operadores Lógicos --------------
-        1. NOT
-        2. AND
-        3. OR
+    1. NOT
+    2. AND
+    3. OR
 
     -------------- Prioridad de los Operadores en General --------------
     1. ()
@@ -242,7 +242,7 @@ print("El resultado es: ",resultado)
 '''
 # Ejemplo: supongamos que tenemos una variable y le queremos reasignar un dato/valor.
 
-# -------- hasta ahora lo hariamoss asi: ----------
+# -------- hasta ahora lo hariamos asi: ----------
     a = 0
     a = a + 5
     print(a) 
@@ -409,6 +409,97 @@ print("El resultado es: ",resultado)
 
 
 
+'''                                          ---------------------------------  Condicionales  ----------------------------------
+
+Sirven para comprar 2 valores, y esa comparación me va a dar un resultado logico es decir False o True.
+
+En los condicionales siempre hay que respetar la identación.
+
+Las sentencias condicionales en Python son: if, elif y else. 
+Pero, ¿qué hace una sentencia condicional? 
+Simplemente comprueba si una declaración (test) es verdadera o falsa, y en base a eso se lleva a cabo una acción.
 
 
+.                                                 ---------------------------------  IF  ----------------------------------     
 
+La sentencia condicional if se usa para tomar decisiones, este evaluá básicamente una operación lógica, es decir una expresión que de como resultado True o False , 
+y ejecuta la pieza de código siguiente siempre y cuando el resultado sea verdadero.   
+'''
+# Ejemplo: este programa solo muestra los valores positivos mayor a 0, en caso contrario se cierra el programa.
+
+numero = int(input("Digite un número: "))
+if numero>0:
+    print("El número es positivo") 
+
+print("fin del programa")          
+
+
+'''                                             ---------------------------------  ELSE  ---------------------------------- 
+
+Una sentencia if..else en Python significa: "Cuando la expresión if se evalúa como True, entonces ejecuta el código que le sigue. Pero si se evalúa como False, 
+entonces ejecuta el código que sigue después de la sentencia else.
+'''
+# Ejemplo: en este programa si pongo un número menor o igual a 0 me va a decir: "el numero es negativo".
+
+numero = int(input("Digite un número: "))
+
+if numero>0:
+    print("El número es positivo")
+else:
+    print("El numero es negativo")
+
+print("Fin del programa")
+
+
+'''                                                 ---------------------------------  ELIF ---------------------------------- 
+
+"elif" sirve para enlazar varios "else if", sin tener que aumentar las tabulaciones en cada nueva comparación. En Python no existe una orden "switch" o "case",
+sino que se deben realizar enlazando varios casos con "elif".
+'''
+# Ejemplo: en este programa vamos a verificar si el número ingresado es 0, en caso de serlo ma va a mostrar: "El número es cero".
+
+numero = int(input("Digite un número: "))
+
+if numero>0:
+    print("El número es positivo")
+elif numero==0:
+    print("El número es cero")
+else:
+    print("El número es negativo")
+
+print("Fin del programa")
+
+
+'''                                        ---------------------------------  Condicionales Combinados ---------------------------------- 
+
+.                                                     -----------------------  Condicionales Anidados ------------------------- 
+
+¿Qué es un condicional anidado en Python?
+Los condicionales, permiten escribir código en su interior y en realidad, nada de impide incluso al interior de un condicional, poner otros (u otros). 
+A eso se le llama condiciones anidados, pues una estructura condicional dentro de otra. 
+'''
+# Ejemplo: 
+#en este programa vamos preguntarle la edad al usuario, si su edad es menor a 0 le vamos a decir: "Edad correcta",
+# si es mayor a 18 le decimos: "Es mayor de edad",
+# si es menor o igual a 0 le vamos a decir: "Edad incorrecta".
+# si es mayor a 99 le vamos a decir: "Edad incorrecta".
+
+edad = int(input("Digite su edad: "))
+
+if edad>0 and edad<100:     # recordemos que, para que funcione And las 2 condiciones tienen que ser verdadera.
+    print("Edad correcta")
+    if edad>=18:
+        print("Es mayor de edad")
+else:
+    print("Edad incorrecta")
+
+# -------- Otra forma de hacerlo: ---------
+
+edad = int(input("Digite su edad: "))
+
+if 0<edad<100:    
+    print("Edad correcta")
+    if edad>=18:
+        print("Es mayor de edad")
+else:
+    print("Edad incorrecta")
