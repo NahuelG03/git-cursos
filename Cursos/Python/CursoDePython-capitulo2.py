@@ -33,7 +33,7 @@ Las listas pueden contener cuantos elementos queramos y como ya decíamos, puede
  Metodo	           Descripción
 append()	Añade un elemento al final de la lista
 clear()	    Remueve todos los elementos de la lista
-copy()	    Entrega una copoa de la lista
+copy()	    Entrega una copia de la lista
 count()	    Entrega el número de elementos con un valor específico
 extend()    Añade elementos de una lista (o cualquier iterable) al final de la lista actual
 index()	    Entrega el número de índex del primer elemento con el valor especificado
@@ -252,7 +252,7 @@ print(lista)
 
 #																				         *
 
-Este metodo te va a copirar toda la lista y te la va a mostrar al lado de la original.
+Este metodo te va a copiar toda la lista y te la va a mostrar al lado de la original.
 '''
 # Ejemplo:
 
@@ -343,7 +343,7 @@ print(tupla)
 
 '''                                               ------------------------------  Conjuntos -------------------------------
 
-*Los conjuntos son grupos de elemtos desordenados; Donde no pueden haber duplicados
+*Los conjuntos son grupos de elemetos desordenados; Donde no pueden haber duplicados
 *Se pueden poner cualquier tipos de datos; Pero no se pueden poner otro tipo de colleciones dentro como (lista, tupla,etc)
 *uno de los principales usos del tipo set es utilizarlo en operaciones del álgebra de conjuntos: unión, intersección, diferencia, diferencia simétrica,.
 
@@ -743,4 +743,91 @@ pop()		  Recibe como parámetro una clave, elimina esta y devuelve su valor. Si 
 setdefault()  Funciona de dos formas. En la primera como get (valor → 1 : nos sirve para agregar un nuevo elemento a nuestro diccionario.)
 update()      Recibe como parámetro otro diccionario. Si se tienen claves iguales, actualiza el valor de la clave repetida; si no hay claves iguales, 
 .             este par clave-valor es agregado al diccionario.
+'''
+
+
+
+'''                                                ------------------------------  PILAS (con listas)  -------------------------------
+
+#																					      LIFO
+
+Link: --> http://elclubdelautodidacta.es/wp/2011/11/python-capitulo-23-el-que-rie-el-ultimo-rie-mejor/
+
+¿Qué es LIFO Python?
+De ahí vienen las siglas LIFO: Last In, First Out; el último en entrar, el primero en salir. 
+Piensa en una montón de papeles que vas apilando uno encima de otro. 
+Cuando los quieres recuperar, accedes en primer lugar al que está arriba de la pila. 
+Una vez lo retiras tienes acceso al siguiente, y así sucesivamente.
+
+¿Qué es LIFO y FIFO en programación?
+El método FIFO en contabilidad significa “primero en entrar, primero en salir”, mientras que el método LIFO significa “último en entrar, primero en salir”. 
+Esto métodos son métodos utilizados para valorar el coste de las mercancías vendidas y el inventario final. 
+'''
+# Ejemplo: agregando elementos por el final
+
+pila = [1,2,3]
+
+pila.append(4)
+pila.append(5)
+
+# Sacando elementos por el final
+pila.pop() # Este metodo tambien te puede retornar el elemento que estas sacando
+
+print(pila) 
+
+# Ejemplo__2: retornarno el elemento que sacamos:
+
+pila = [1,2,3]
+
+pila.append(4)
+pila.append(5)
+
+n = pila.pop()
+print(f"Sacando el elemento {n}")
+
+print(pila)
+
+
+'''                                                ------------------------------  COLAS (con listas)  -------------------------------
+
+¿Qué es FIFO en Python?
+FIFO (primero en entrar primero en salir, del inglés «First In First Out»): el primer ítem que es añadido a la lista es el primero en ser retornado.
+'''
+# Ejemplo: Personas en la cola de un banco
+
+cola = ["Maria", "Alejandro", "Jose", "Mario"]
+
+# Agrando elementos al final
+cola.append("Karla")
+cola.append("Flor")
+
+print(cola)
+
+# Sacando elementos por el principio de la cola
+cola.pop(0)
+
+# Ejemplo__2: Mostrando el elemento que sacamos
+
+cola = ["Maria", "Alejandro", "Jose", "Mario"]
+
+cola.append("Karla")
+cola.append("Flor")
+
+print(cola)
+
+n = cola.pop(0)
+print(f"Atendiendo a {n}")
+
+print(cola)
+
+# Con esto se obtiene los mismos resultados que importando (from collections import deque)
+
+
+
+
+
+
+
+
+
 
