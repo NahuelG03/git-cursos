@@ -86,7 +86,8 @@ for i in coleccion:
 coleccion = {"Nahuel":22, "Maria":23, "Jose":45, "Luis":12}
 
 for i in coleccion:
-    print(f"{coleccion[i]}")
+    print(f"{coleccion[i
+        ]}")
 
 
 # sacando la clave y el valor

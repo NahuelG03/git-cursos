@@ -507,7 +507,7 @@ print(cadena)
 '''                                                          replace()
 Este método se utiliza para reemplazar datos en la cadena.
 
-El método replace(sub, nuevo) de la clase string devuelve una copia del string con todas las ocurrencias del substring 
+El método replace(sub, nuevo) de la clase string devuelve una copia del string con todas las ocurrencias del substring             
 sub reemplazadas por el substring nuevo .
 '''
 # Ejemplo: "h0la mund0" quiero que reemplace todas las o por 0

@@ -17,7 +17,7 @@
 # Si queremos hacer un salto de línea tenemos que poner \n (Alt Gr + ? = \).
 
 print("Hola mundo\nmi nombre es Nahuel")   
-
+ 
 
 '''                                    ==============================  Asignación De Valores | Varibles =================================                                                
     
@@ -408,10 +408,9 @@ print("El resultado es: ",resultado)
     0 # Resultado
 
 
+'''                                             ==============================  Condicionales  =================================
 
-'''                                          ---------------------------------  Condicionales  ----------------------------------
-
-Sirven para comprar 2 valores, y esa comparación me va a dar un resultado logico es decir False o True.
+Sirven para comparar 2 valores, y esa comparación me va a dar un resultado logico es decir False o True.
 
 En los condicionales siempre hay que respetar la identación.
 
@@ -434,7 +433,7 @@ if numero>0:
 print("fin del programa")          
 
 
-'''                                             ---------------------------------  ELSE  ---------------------------------- 
+'''                                              ---------------------------------  ELSE  ---------------------------------- 
 
 Una sentencia if..else en Python significa: "Cuando la expresión if se evalúa como True, entonces ejecuta el código que le sigue. Pero si se evalúa como False, 
 entonces ejecuta el código que sigue después de la sentencia else.
@@ -479,7 +478,7 @@ Los condicionales, permiten escribir código en su interior y en realidad, nada 
 A eso se le llama condiciones anidados, pues una estructura condicional dentro de otra. 
 '''
 # Ejemplo: 
-#en este programa vamos preguntarle la edad al usuario, si su edad es menor a 0 le vamos a decir: "Edad correcta",
+#en este programa vamos a preguntarle la edad al usuario, si su edad es menor a 0 le vamos a decir: "Edad correcta",
 # si es mayor a 18 le decimos: "Es mayor de edad",
 # si es menor o igual a 0 le vamos a decir: "Edad incorrecta".
 # si es mayor a 99 le vamos a decir: "Edad incorrecta".

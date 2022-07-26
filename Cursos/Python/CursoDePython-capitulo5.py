@@ -224,3 +224,25 @@ doblar_valores(n[:]) # [:] = copia
 
 print(n)
 
+
+'''                           -------------------   Funciones recursivas  -------------------
+
+Son simplemente funciones que se llaman así mismas; Son algo similares a los ciclos. 
+Las funciones recursivas simplemente sirven como algo iterativo y como es iterativo tendrá que finalizar. 
+
+Las funciones recursivas son funciones que se llaman a sí mismas durante su propia ejecución. 
+Ellas funcionan de forma similar a las iteraciones, pero debe encargarse de planificar el momento en que dejan de 
+llamarse a sí mismas o tendrá una función recursiva infinita.
+'''
+# Ejemplo: le damos un valor y hace una cuenta regresiva hasta que explote BOOM
+
+def cuenta_regresiva(num):
+    if num > 0:
+        print(num)
+        cuenta_regresiva(num - 1) # Aca está la función recursiva
+    else: # Caso base (para que no sea infinito)
+        print("Booooom !!!")
+
+cuenta_regresiva(5)
+
+

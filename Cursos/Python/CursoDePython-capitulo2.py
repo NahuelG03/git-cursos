@@ -4,7 +4,7 @@
     ========================================================================================================================================================================  				
 
 '''                                            ==============================  Colecciones  =================================   
-
+ 
 ¿Qué es una colección en Python?
 Una colección de datos en programación almacena 2 o más elementos en un arreglo con distintos números de índex, 
 por lo que nos ayuda a agrupar elementos que tengan algo que ver unos con los otros. 
@@ -384,7 +384,7 @@ conjunto = set()
 
 conjunto = {1,2,3, "Hola" ,4.56}
 
-conjunto.add(5)       # esto como los conjuntos son desordenados y unicos no te va a agrega r al final sino que es aleatorio.
+conjunto.add(5)       # esto como los conjuntos son desordenados y unicos no te va a agregar al final sino que es aleatorio.
 conjunto.add("Nahuel")
 
 print(conjunto)
@@ -632,7 +632,7 @@ print(diccionario)
 
 diccionario = {"azul":"blue" , "rojo":"red" , "verde":"green"}
 
-del(diccioanrio["verde"])
+del(diccionario["verde"])
 
 print(diccionario) 
 
