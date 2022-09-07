@@ -1,6 +1,6 @@
 				
-	========================================================================================================================================================================
-	=                                                                        Curso de Python                                                                               =
+    ========================================================================================================================================================================
+    =                                                                        Curso de Python                                                                               =
     ========================================================================================================================================================================  				
 
 '''                                            ==============================  Colecciones  =================================   
@@ -58,7 +58,7 @@ También podemos pedirle al programa que lea el número de index de forma invers
 '''
 
 
-'''								            	-----------------------  Longitud del arreglo | LEN()  --------------------------
+'''			                          -----------------------  Longitud del arreglo | LEN()  --------------------------
 
 Para determinar cuántos elementos contiene nuestra lista, utilizaremos la función len().
 '''
@@ -70,9 +70,9 @@ print(len(lista))
 
 '''
 
-#							                       	-----------------------  Añadir elementos  --------------------------
+						        -----------------------  Añadir elementos  --------------------------
 
-#																			     APPEND()
+										     APPEND()
 
 Además de sustituir, también podemos agregar más elementos a los ya existentes usando el comando append().
 '''
@@ -84,7 +84,7 @@ lista.append("Nahuel")
 
 print(lista)
 
-'''                                                                              INSERT()
+'''                                                                                  INSERT()
 
 Podemos incluso seleccionar el lugar en el que queremos añadir dicho objeto en la lista mediante el método insert().
 '''
@@ -97,9 +97,9 @@ print(lista)
 
 
 
-'''							                     	  -----------------------  Unir elementos --------------------------
+'''							  -----------------------  Unir elementos --------------------------
 
-#																				   EXTEND()
+										      EXTEND()
 
 el método extend(), cuyo propósito es añadir los elementos de una lista a la otra.
 '''
@@ -111,7 +111,7 @@ lista2.extend(6,7,8)
 print(lista)
 
 
-#																				   OPERADOR (+) 
+#										     OPERADOR (+) 
 
 # Ejemplo: 
 
@@ -123,7 +123,7 @@ lista3 = lista1 + lista2
 print(lista3)
 
 						
-'''																		       	      APPEND
+'''							       		  	        APPEND
 
 Otra manera es anexando los elementos de lista2 en la lista1, uno por uno.
 '''
@@ -138,9 +138,9 @@ for x in lista2:
 print(lista1)
 
 
-'''			  	                            	   -----------------------  Verificar si un elemento existe --------------------------
+'''			  	                    -----------------------  Verificar si un elemento existe --------------------------
 
-#																						 IN
+																						 IN
 
 Esta función te permite conocer si un cierto elemento está presente en una lista.
 '''
@@ -156,7 +156,7 @@ if "fresa" in lista_frutas:
 	print("sí, 'fresa' se encuentra en la lista de frutas")
 
 
-'''			  	                                -----------------------  En que índice se encuentra el elemento --------------------------
+'''			  	                  -----------------------  En que índice se encuentra el elemento --------------------------
 
 #																					   Índex()			
 
@@ -170,9 +170,8 @@ lista = [1,2,3,4,5, "Nahuel"]
 print(lista.index(5))
 
 
-'''			  	                                 -----------------------  Cuanta veces aparece el elemento --------------------------
-
-#																				        COUNT()
+'''			  	                      -----------------------  Cuanta veces aparece el elemento --------------------------
+																				        COUNT()
 
 count() es una función incorporada en Python que devuelve el recuento de cuántas veces aparece un objeto dado en la lista. 
 Parámetros: Objeto son las cosas cuya cuenta se va a devolver.
@@ -185,17 +184,17 @@ print(lista.count(1))
 
 
 
-'''			  	                                        -----------------------  Remover elementos --------------------------
+'''			  	                             -----------------------  Remover elementos --------------------------
 
 Existen varios métodos para remover un elemento de una lista:
  *remove() -->  retira un elemento específico’
  *pop()  --> retira el número de índex especificado o o el último índex si no se especifica un número.
  *clear() --> Elimina todos los elementos de la lista.
+'''					  					          
+'''											  REMOVE()
 
-
-'''#					  													          REMOVE()
-
-# retira un elemento específico’
+retira un elemento específico
+'''
 # Ejemplo:
 
 lista = [1,2,3,4,5, "Nahuel"]
@@ -223,7 +222,7 @@ lista.pop(2)
 print(lista)
 
 
-'''                																	     CLEAR() 
+'''                						               	        CLEAR() 
 
 Elimina todos los elementos de la lista.
 '''
@@ -234,7 +233,7 @@ lista.clear()
 
 print(lista)
 
-'''			  	                                        -----------------------  Voltear una lista --------------------------
+'''			  	                          -----------------------  Voltear una lista --------------------------
 
 #																				  	 REVERSE()
 
@@ -248,7 +247,7 @@ lista.reverse()
 print(lista)
 
 
-'''			  	                                     -----------------------  Copiar todos los elementos --------------------------
+'''			  	                      -----------------------  Copiar todos los elementos --------------------------
 
 #																				         *
 
@@ -261,7 +260,7 @@ lista = [1,2,3,4,5, "Nahuel"]*2
 print(lista)
 
 
-'''			  	                                      -----------------------  Ordenar los elementos --------------------------
+'''			  	                        -----------------------  Ordenar los elementos --------------------------
 
 Las listas de Python tienen un método incorporado list. sort() que modifica la lista. 
 También hay una función incorporada sorted() que crea una nueva lista ordenada a partir de un iterable. 
@@ -287,7 +286,7 @@ print(lista)
 
 
 
-'''                                                ------------------------------  Tuplas  -------------------------------
+'''                                                     ------------------------------  Tuplas  -------------------------------
 
 ¿Qué son las tuplas en Python?
 Un tuple es una colección de datos cuyo orden es inalterable, o sea, son elementos ordenados en una secuencia específica y que posee importancia. 
@@ -323,7 +322,7 @@ print(tupla.count(4))
 print(len(tupla))
 
 
-#																 Transformar/Convertir una Tupla en una Lista
+#					   		            Transformar/Convertir una Tupla en una Lista
 
 
 tupla = (4, "Hola", 6.78,[1,2,3],4)
@@ -332,7 +331,7 @@ lista = list(tupla)
 print(tupla)
 
 
-#															 	  Transformar/Convertir una Lista en una Tupla
+#								    Transformar/Convertir una Lista en una Tupla
 
 Lista = [4, "Hola", 6.78,[1,2,3],4]
 lista = tuple(lista)
@@ -341,7 +340,7 @@ print(tupla)
 
 
 
-'''                                               ------------------------------  Conjuntos -------------------------------
+'''                                                    ------------------------------  Conjuntos -------------------------------
 
 *Los conjuntos son grupos de elemetos desordenados; Donde no pueden haber duplicados
 *Se pueden poner cualquier tipos de datos; Pero no se pueden poner otro tipo de colleciones dentro como (lista, tupla,etc)
@@ -435,7 +434,7 @@ conjunto = {1,2,3, "Hola" ,4.56}
 print(len(conjunto))
 
 	
-#																			CONJUNTOS SEGUNDA PARTE
+#							  	              CONJUNTOS SEGUNDA PARTE
 
 # ----- Como hacer la igualdad de 2 conjuntos -----
 
@@ -452,7 +451,7 @@ b = {3,1,2}
 print(a == b) # True
 
 
-'''																			 Unión de 2 conjuntos		
+'''									       Unión de 2 conjuntos		
 
 La unión de dos conjuntos A y B es el conjunto A ∪ B que contiene todos los elementos de A y de B.
 
@@ -468,7 +467,7 @@ c = a | b
 print(c)	# El 3 sale una vez porque no pueden haver duplicados. 	
 
 
-'''                                                                       Intersección de conjuntos
+'''                                                                          Intersección de conjuntos
 
 La intersección de dos conjuntos A y B es el conjunto A ∩ B que contiene todos los elementos comunes de A y B.
 
@@ -484,7 +483,7 @@ c = a & b
 print(c)
 
 
-'''                                                                         Diferencia de conjuntos             
+'''                                                                            Diferencia de conjuntos             
 
 La diferencia entre dos conjuntos A y B es el conjunto A \ B que contiene todos los elementos de A que no pertenecen a B.
 
@@ -500,7 +499,7 @@ c = a - b
 print(c)   
 
 
-'''                              								        Diferencia simétrica de conjuntos	
+'''                              				           Diferencia simétrica de conjuntos	
 
 La diferencia simétrica entre dos conjuntos A y B es el conjunto que contiene los elementos de A y B que no son comunes.
 
@@ -516,7 +515,7 @@ c = a ^ b
 print(c)   
 
 
-'''                              								        Como saber si es un Subconjunto
+'''                              					    Como saber si es un Subconjunto
 
 ¿Qué es un subconjunto en programación?
 La teoría nos dice que A es subconjunto de B cuando A está incluido en B, que es lo mismo que decir que B contiene a A. 
@@ -524,7 +523,7 @@ Para finalizar, unas palabras sobre el concepto de conjuntos disjuntos.
 Sabemos que dos conjuntos son disjuntos cuando no tienen elementos en común, es decir, su intersección es el conjunto vacío.	
 
 
-#																				  ISSUBSET()			
+#										      ISSUBSET()			
 
 El método issubset() devuelve True si todos los elementos de un conjunto A están presentes en otro conjunto B que se pasa como argumento y devuelve falso si todos los elementos 
 no están presentes.
@@ -539,7 +538,7 @@ c = {1,2,3,4,5}
 print(a.inssubset(c))
 print(b.inssubset(c))
 
-'''																				  ISSUPERSET()
+'''										     ISSUPERSET()
 
 El método issuperset() devuelve True si todos los elementos de un conjunto A ocupan el conjunto B que se pasa como argumento y devuelve falso si todos los elementos de B no 
 están presentes en A.
@@ -554,7 +553,7 @@ c = {1,2,3,4,5}
 
 print(c.issuperset(a))
 
-'''                                                                                 ISDISJOINT() 
+'''                                                                                  ISDISJOINT() 
 
 Se dice que dos conjuntos están separados cuando su intersección es nula. 
 En palabras simples, no tienen ningún elemento común entre ellos.
@@ -569,7 +568,7 @@ c = {1,2,3,4,5}
 print(a.isdisjoint(b))
 
 
-'''                              								                 Conjuntos inmutables
+'''                              					         Conjuntos inmutables
 
 
 #																					  Frozenset
@@ -591,7 +590,7 @@ print(a.isdisjoint(b))
 
 
 
-'''                                                ------------------------------  Diccionarios  -------------------------------
+'''                                                  ------------------------------  Diccionarios  -------------------------------
 
 Son otro tipo de colleción donde los elementos tambien se guardan desordenados; 
 Pero la principal caracteristica es que tienen 2 elementos por posición (la CLAVE y el VALOR), y en estos No pueden haber claves duplicadas.
@@ -618,7 +617,7 @@ diccionario["amarillo"] = "yellow"
 
 print(diccionario) 
 
-#																         	  Modificar elementos
+#								         	  Modificar elementos
 # Ejemplo:
 
 diccionario = {"azul":"blue" , "rojo":"red" , "verde":"green"}
@@ -627,7 +626,7 @@ diccionario["azul"] = "BLUE"
 
 print(diccionario) 
 
-#																			  Eliminar elementos
+#										   Eliminar elementos
 # Ejemplo:
 
 diccionario = {"azul":"blue" , "rojo":"red" , "verde":"green"}
@@ -636,7 +635,7 @@ del(diccionario["verde"])
 
 print(diccionario) 
 
-#													 Insertar una (Lista o Tupla u otro diccionario) dentro de un Diccionario
+#							 Insertar una (Lista o Tupla u otro diccionario) dentro de un Diccionario
 # Ejemplo: Agenda secilla
 
 diccionario = {"Nahuel": {"edad":18,"estatura":1.75}, "Jose":[21,1.78], "María":[22,1.67]}
@@ -644,9 +643,9 @@ diccionario = {"Nahuel": {"edad":18,"estatura":1.75}, "Jose":[21,1.78], "María"
 print(diccionario["Nahuel"])
 
 
-#																			DICCIONARIOS SEGUNDA PARTE
+#									        DICCIONARIOS SEGUNDA PARTE
 
-#																	Mostrar el valor al que pertenece la clave
+#									Mostrar el valor al que pertenece la clave
 
 # Ejemplo: equipo de futbol (número de la remera y a que jugador pertenece ese número) Equipo --> Selección Argentina
 # De esta forma si le asignamos un valor que no tiene clave nos va a tirar un error
@@ -668,7 +667,7 @@ print(equipo.get(6, "no existe ese número de camiseta"))
 
 
 
-#																	  Busqueda directa dentro del diccionario
+#								          Busqueda directa dentro del diccionario
 # Retorna una lista de elementos, los cuales serán las claves de nuestro diccionario.
 # Ejemplo:
 
@@ -728,7 +727,7 @@ equipo.clear()
 
 print(equipo)
 
-'''                                                                      Otros Métodos de los Diccionarios
+'''                                                                        Otros Métodos de los Diccionarios
 
 *Link --> https://devcode.la/tutoriales/diccionarios-en-python/
  
