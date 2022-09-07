@@ -1,10 +1,10 @@
-                ===============================================================================================================
-	            =                                          Curso de Python | Modulo 2                                        =
-                ===============================================================================================================
+                    	 ===============================================================================================================
+	           	 =                                          Curso de Python | Modulo 2                                         =
+               		 ===============================================================================================================
 
 
 
-'''                                 ==========================  ARGUMENTOS  ==========================
+'''                                 		==========================  ARGUMENTOS  ==========================
 
 ¿Qué es un argumento en Python?
 En la definición de una función los valores que se reciben se denominan parámetros, pero durante la llamada los valores que se envían se denominan argumentos.
@@ -35,7 +35,7 @@ error='No existe tal operación')
 print('Nos vemos...')
 
 
-'''                                  ==========================  MODULARIDAD  ==========================
+'''                                  		==========================  MODULARIDAD  ==========================
 
 La modularidad es, en programación modular y más específicamente en programación orientada a objetos, la propiedad que permite subdividir una aplicación en partes más 
 pequeñas (llamadas módulos), cada una de las cuales debe ser tan independiente como sea posible de la aplicación en sí y de las partes restantes.
@@ -43,7 +43,7 @@ pequeñas (llamadas módulos), cada una de las cuales debe ser tan independiente
 
 
 
-'''                       ========================== Procedimiento MAIN(el principal) ==========================
+'''                       		========================== Procedimiento MAIN(el principal) ==========================
 
 
 la función main(), realmente, es un nombre para una función def establecida por convención entre los programadores de Python. Su traducción del inglés, 'principal', 
